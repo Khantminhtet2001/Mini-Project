@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600&family=Poppins:wght@100;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <title>MST UNIVERSTIY</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+
+        }
+        .header{
+            min-height: 100vh;
+            width: 100%;
+            background: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url(assets/uni.jpg) ;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+        nav{
+            display:flex;
+            padding: 2% 6%;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .head{
+            width: 50%;
+            text-decoration: none;
+            color: #fff;
+        }
+        .fa-solid{
+            color: red !important;
+            font-size: 40px;
+        }
+        .head{
+            font-size: 30px;
+            font-weight: bold;
+
+        }
+        .nav-link{
+            flex: 1;
+            text-align: right;;
+        }
+        .nav-link ul li{
+            list-style: none;
+            display: inline-block;
+            padding: 8px;
+            position: relative;
+        }
+        .nav-link ul li a{
+            color: #fff;
+            text-decoration: none;
+            font-size: 13px;
+        }
+        .nav-link ul li a::after{
+            content: '';
+            width: 0%;
+            height: 2px;
+            background: #f44336;
+            display: block;
+            margin: auto;
+            transition: 0.5s;
+        }
+        .nav-link ul li a:hover::after{
+            width: 100%;
+        }
+        .text-box{
+            width: 90%;
+            color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+        }
+        .text-box h1{
+            font-size: 62px;
+        }
+        .text-box p{
+            margin: 10px 0 40px;
+            font-size: 14px;
+            color: #fff;
+        }
+        .hero-btn{
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            border: 1px solid #fff;
+            padding: 12px 34px !important;
+            font-size: 13px;
+            background: transparent;
+            position: relative;
+            cursor: pointer;
+        }
+        .hero-btn:hover{
+            border: 1px solid #f44336;
+            background: #f44336;
+            transition: 0.5s;
+        }
+        nav .none{
+            display: none;
+        }
+        @media(max-width: 700px){
+            .text-box h1{
+                font-size: 20px;
+            }
+            .fa-solid{
+                font-size: 40px;
+            }
+            .head{
+                width: 60%;
+            }
+            .nav-link ul li{
+                display: block;
+
+            }
+            .nav-link{
+                position: absolute;
+                background: #f44336;
+                height: 100vh;
+                width: 200px;
+                right: -200px;
+                top: 0;
+                text-align: left;
+                z-index: 2;
+                transition: 1s;
+            }
+            nav .none{
+                display: block;
+                color: #fff !important;
+                margin: 10px;
+                font-size: 22px;
+                cursor: pointer;
+                font-weight: bold;
+            }
+            .nav-link ul{
+                padding: 30px;
+
+            }
+        }
+
+
+        /* ------ course ------- */
+
+        .course{
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            padding-top: 100px;
+
+        }
+        .course h1{
+            font-size: 36px;
+            font-weight: 600;
+
+        }
+        .course p{
+            color: #777;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 22px;
+            padding: 10px;
+        }
+        .row{
+            margin-top:  5%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .course-col{
+            flex-basis: 31%;
+            background: #fff3f3;
+            border-radius: 10px;
+            margin-bottom: 5%;
+            padding: 20px 12px;
+            box-sizing: border-box;
+            transition: 0.5s;
+        }
+        h3{
+            text-align: center;
+            font-weight: 600;
+            margin: 10px 0;
+
+
+        }
+        .course-col:hover{
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+        @media(max-width: 700px){
+            .row{
+                flex-direction: column;
+            }
+        }
+
+        /* ---------campus------------ */
+
+        .campus{
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .campus-col{
+            flex-basis: 32%;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        .campus h1{
+            font-size: 36px;
+            font-weight: 600;
+
+        }
+        .campus p{
+            color: #777;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 22px;
+            padding: 10px;
+        }
+
+        .campus-col img{
+            width: 100%;
+            display: block;
+
+        }
+        .layer{
+            background: transparent;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: 0.5s;
+        }
+        .layer:hover{
+            background: rgba(226,0,0,0.7)
+        }
+        .layer h3{
+            width: 100%;
+            font-weight: 500;
+            color: #fff;
+            font-size: 26px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+        }
+        .layer:hover h3{
+            bottom: 49%;
+            opacity: 1;
+        }
+
+
+        /* ---------- facilities ----------- */
+
+        .facilities{
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            padding-top: 100px;
+        }
+        .facilities-col{
+            flex-basis: 31%;
+            border-radius: 10px;
+            margin-bottom: 5%;
+            text-align: left;
+        }
+        .facilities-col img{
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .facilities h1{
+            font-size: 36px;
+            font-weight: 600;
+
+        }
+        .facilities p{
+            color: #777;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 22px;
+            padding: 10px;
+        }
+        .facilities-col p{
+            padding: 0;
+            font-size: 12px;
+        }
+
+        .facilities-col h3{
+            margin-top: 16px;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        /* --------- testimonials ---------- */
+
+        .testimonials h1{
+            font-size: 36px;
+            font-weight: 600;
+
+        }
+        .testimonials p{
+            color: #777;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 22px;
+            padding: 10px;
+        }
+        .testimonials{
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            padding-top: 100px;
+        }
+        .testimonial-col{
+            
+            flex-basis: 27%;
+            border-radius: 10px;
+            margin-bottom: 5%;
+            text-align: left;
+            background: #fff3f3;
+            padding: 20px 14px;
+            cursor: pointer;
+            display: flex;
+        }
+        .testimonial-col img{
+            height: 40px;
+            margin-left: 5px;
+            margin-right: 20px;
+            border-radius: 50%;
+        }
+        .testimonial-col p{
+            padding: 0;
+        }
+        .testimonial-col h3{
+            margin-top: 15px;
+            text-align: left;
+        }
+        .testimonial-col .fa{
+            color: #f44336;
+        }
+        @media(max-width: 700px){
+            .testimonial-col img{
+                margin-left: 0px;
+                margin-right: 15px;
+            }
+        }
+
+        /* ------ call to action ------- */
+
+        .cta{
+            margin: 200px auto;
+            width: 80%;
+            background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(assets/main.jpg);
+            background-position: center;
+            background-size: cover;
+            border-radius: 10px;
+            text-align: center;
+            padding: 100px 0;
+
+        }
+        .cta h1{
+            color: #fff;
+            margin-bottom: 40px;
+            padding: 0;
+        }
+        
+        @media(max-width: 700px){
+            .cta h1{
+                font-size: 24px;;
+            }
+            
+        }
+
+        /* -------- footer --------- */
+        .footer{
+            width: 100%;
+            text-align: center;
+            padding: 30px 0;
+        }
+        .footer h4{
+            margin-bottom: 25px;
+            margin-top: 20px;
+            font-weight: 600;
+        }
+        .footer p{
+            color: #777;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 22px;
+            padding: 10px;
+        }
+        .icons .fa-brands{
+            color: #f44336;
+            margin: 0 13px;
+            cursor: pointer;
+            padding: 18px;
+        }.campus
+        .fa-regular{
+            color: #f44336;
+        }
+    </style>
+
+
+
+
+
+
+</head>
+<body>
+    <section class="header" id="home">
+
+
+        <nav>
+            <a href="index.html" class="head" ><i class="fa-solid fa-graduation-cap" ></i> MYANMAR SKILLS THCHNOLOGIES</a>
+    
+            <div class="nav-link" id="navLinks">
+                <i class="fa-solid fa-xmark none " onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#course">COURSE</a></li>
+                    <li><a href="#campus">CAMPUS</a></li>
+                    <li><a href="#facilities">FACILITIES</a></li>
+                    <li><a href="#conactus">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa-solid fa-bars none" onclick="showMenu()"></i>
+        </nav>
+
+        <div class="text-box" id="home">
+            <h1>Myanmar's Best University</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla similique molestias mollitia quos eius,hic at. Veniam asperires sunt tempora <br>optio autem? Non vitae voluptate iusto odio necessitatibus.</p>
+            <a href="" class="hero-btn">Visit Us To know More</a>
+        </div>
+
+    </section>
+
+    <!-- -------- course -------- -->
+
+    <section class="course" id="course">
+        <h1>
+            Courses We Offer
+        </h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, sequi!</p>
+
+        <div class="row">
+            <div class="course-col">
+                <h3>NCC <br> Level 3 Diploma in Computing</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores repellat amet maiores ut aut ex ea sint. Ratione dolorem ipsum ex nulla tempore quaerat mollitia, quibusdam illum ut aspernatur impedit iste molestias, delectus fuga aliquid voluptatibus? Aliquid officiis tenetur nam?</p>
+            </div>
+
+            <div class="course-col">
+                <h3>NCC <br> Level 3 Diploma in Business</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores repellat amet maiores ut aut ex ea sint. Ratione dolorem ipsum ex nulla tempore quaerat mollitia, quibusdam illum ut aspernatur impedit iste molestias, delectus fuga aliquid voluptatibus? Aliquid officiis tenetur nam?</p>
+            </div>
+
+            <div class="course-col">
+                <h3>ITPEC</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores repellat amet maiores ut aut ex ea sint. Ratione dolorem ipsum ex nulla tempore quaerat mollitia, quibusdam illum ut aspernatur impedit iste molestias, delectus fuga aliquid voluptatibus? Aliquid officiis tenetur nam?</p>
+            </div>
+        </div>
+
+
+
+
+    </section>
+
+    <!-- ------- campus------- -->
+
+    <section class="campus" id="campus">
+        <h1>Our Campus</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, voluptate.</p>
+
+        <div class="row">
+            <div class="campus-col">
+                <img src="assets/landon.jpg" alt="">
+                <div class="layer">
+                    <h3>YANGON</h3>
+                </div>
+            </div>
+
+            <div class="campus-col">
+                <img src="assets/newyork.jpg" alt="">
+                <div class="layer">
+                    <h3>MANDALAY</h3>
+                </div>
+            </div>
+
+            <div class="campus-col">
+                <img src="assets/washington2.jpg" alt="">
+                <div class="layer">
+                    <h3>YANGON CAMPUS-2</h3>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- ------- facilities ---------- -->
+
+    <section class="facilities" id="facilities">
+
+        <h1>Our Facilities</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, fugiat?</p>
+
+        <div class="row">
+            <div class="facilities-col">
+                <img src="assets/library.jpg" alt="">
+                <h3>World Class library</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto, sint? Voluptatibus voluptates temporibus saepe assumenda!</p>
+            </div>
+
+            <div class="facilities-col">
+                <img src="assets/playground.jpg" alt="">
+                <h3>Largest Play Ground</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto, sint? Voluptatibus voluptates temporibus saepe assumenda!</p>
+            </div>
+
+            <div class="facilities-col">
+                <img src="assets/tasty.jpg" alt="">
+                <h3>Tasty and Healthy Food</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto, sint? Voluptatibus voluptates temporibus saepe assumenda!</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ---------- testimonials ----------- -->
+
+    <section class="testimonials">
+
+        <h1>What Out Student Says</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+        <div class="row">
+            <div class="testimonial-col">
+                <img src="assets/mr1.jpg" alt="">
+                <div>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam earum corporis odio beatae ducimus enim incidunt veniam sequi autem nisi! Tenetur quae numquam vero, quia tempore fugiat accusantium porro hic.</p>
+                    <h3>Mr.Aung Kaung Zaw</h3>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-stroke"></i>
+                </div>
+            </div>
+
+            <div class="testimonial-col">
+                <img src="assets/mrs.jpg" alt="">
+                <div>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam earum corporis odio beatae ducimus enim incidunt veniam sequi autem nisi! Tenetur quae numquam vero, quia tempore fugiat accusantium porro hic.</p>
+                    <h3>Mrs.Aung Shin Thant</h3>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+            </div>
+
+            <div class="testimonial-col">
+                <img src="assets/mr2.jpg" alt="">
+                <div>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam earum corporis odio beatae ducimus enim incidunt veniam sequi autem nisi! Tenetur quae numquam vero, quia tempore fugiat accusantium porro hic.</p>
+                    <h3>Mr.Min Yee Mon</h3>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ------- Call to Action ------- -->
+
+    <section class="cta" id="conactus">
+        <h1> Enroll For Our Various online courses <br> Anywhere from The World</h1>
+        <a href="" class="hero-btn">CONTACT US</a>
+
+    </section>
+
+    <!-- ------- footer ------- -->
+
+    <section class="footer">
+
+        <h4>About Us</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident illum asperiores reiciendis veritatis perspiciatis ad eius labore aliquid, <br> repellendus quos, repudiandae facilis mollitia voluptatem explicabo.</p>
+        <div class="icons">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-linkedin"></i>
+        </div>
+        <p>Made with <i class="fa-regular fa-heart"></i> by Khant Min Htet </p>
+    </section>
+
+
+    <!-- --------javaScript for Toggle Menu -------- -->
+
+    <script>
+
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+
+
+
+
+    </script>
+
+</body>
+</html>
